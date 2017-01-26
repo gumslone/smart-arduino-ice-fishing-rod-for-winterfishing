@@ -760,19 +760,10 @@ void set_servo_min_pos()
   delay(30);
   myservo.detach();
   display.println(servo_min_pos);
-
   display.setTextSize(1);
-  //if(curr_menu > 0)
-  //{
-    display.setCursor(115,50);
-      //if (5==curr_menu_item) 
-      //{
-        display.setTextColor(BLACK,WHITE); // 'inverted' text
-      //}
-      //else display.setTextColor(WHITE);
-    display.println("<<");  
-  //}
-  
+  display.setCursor(115,50);
+  display.setTextColor(BLACK,WHITE); // 'inverted' text
+  display.println("<<");  
   display.display();
 }
 void set_servo_max_pos()
@@ -813,19 +804,10 @@ void set_servo_max_pos()
   delay(30);
   myservo.detach();
   display.println(servo_max_pos);
-
   display.setTextSize(1);
-  //if(curr_menu > 0)
-  //{
-    display.setCursor(115,50);
-      //if (5==curr_menu_item) 
-      //{
-        display.setTextColor(BLACK,WHITE); // 'inverted' text
-      //}
-      //else display.setTextColor(WHITE);
-    display.println("<<");  
-  //}
-  
+  display.setCursor(115,50);
+  display.setTextColor(BLACK,WHITE); // 'inverted' text
+  display.println("<<");  
   display.display();
 }
 
@@ -838,7 +820,6 @@ void set_servo_start_pos()
   display.setCursor(0,0);
   display.setTextColor(WHITE);
   display.println("Servo start position");
-  
   display.setTextSize(4);
   display.setCursor(0,20);
   display.setTextColor(BLACK,WHITE); // 'inverted' text
@@ -869,17 +850,9 @@ void set_servo_start_pos()
   display.println(servo_start_pos);
 
   display.setTextSize(1);
-  //if(curr_menu > 0)
-  //{
-    display.setCursor(115,50);
-      //if (5==curr_menu_item) 
-      //{
-        display.setTextColor(BLACK,WHITE); // 'inverted' text
-      //}
-      //else display.setTextColor(WHITE);
-    display.println("<<");  
-  //}
-  
+  display.setCursor(115,50);
+  display.setTextColor(BLACK,WHITE); // 'inverted' text
+  display.println("<<");  
   display.display();
 }
 
@@ -920,22 +893,11 @@ void set_servo_end_pos()
   myservo.write(servo_end_pos);
   delay(30);
   myservo.detach();
-  
-  
   display.println(servo_end_pos);
-
   display.setTextSize(1);
-  //if(curr_menu > 0)
-  //{
-    display.setCursor(115,50);
-      //if (5==curr_menu_item) 
-      //{
-        display.setTextColor(BLACK,WHITE); // 'inverted' text
-      //}
-      //else display.setTextColor(WHITE);
-    display.println("<<");  
-  //}
-  
+  display.setCursor(115,50);
+  display.setTextColor(BLACK,WHITE); // 'inverted' text
+  display.println("<<");  
   display.display();
 }
 
@@ -975,17 +937,9 @@ void set_servo_speed()
   display.println(servo_speed);
 
   display.setTextSize(1);
-  //if(curr_menu > 0)
-  //{
-    display.setCursor(115,50);
-      //if (5==curr_menu_item) 
-      //{
-        display.setTextColor(BLACK,WHITE); // 'inverted' text
-      //}
-      //else display.setTextColor(WHITE);
-    display.println("<<");  
-  //}
-  
+  display.setCursor(115,50);
+  display.setTextColor(BLACK,WHITE); // 'inverted' text
+  display.println("<<");  
   display.display();
 }
 
@@ -1030,17 +984,9 @@ void custom_set_servo_start_pos()
   display.println(custom_servo_start_pos);
 
   display.setTextSize(1);
-  //if(curr_menu > 0)
-  //{
-    display.setCursor(115,50);
-      //if (5==curr_menu_item) 
-      //{
-        display.setTextColor(BLACK,WHITE); // 'inverted' text
-      //}
-      //else display.setTextColor(WHITE);
-    display.println("<<");  
-  //}
-  
+  display.setCursor(115,50);
+  display.setTextColor(BLACK,WHITE); // 'inverted' text
+  display.println("<<");  
   display.display();
 }
 
@@ -1081,22 +1027,11 @@ void custom_set_servo_end_pos()
   myservo.write(custom_servo_end_pos);
   delay(30);
   myservo.detach();
-  
-  
   display.println(custom_servo_end_pos);
-
   display.setTextSize(1);
-  //if(curr_menu > 0)
-  //{
-    display.setCursor(115,50);
-      //if (5==curr_menu_item) 
-      //{
-        display.setTextColor(BLACK,WHITE); // 'inverted' text
-      //}
-      //else display.setTextColor(WHITE);
-    display.println("<<");  
-  //}
-  
+  display.setCursor(115,50);
+  display.setTextColor(BLACK,WHITE); // 'inverted' text
+  display.println("<<");  
   display.display();
 }
 
@@ -1136,17 +1071,9 @@ void custom_set_servo_speed()
   display.println(custom_servo_speed);
 
   display.setTextSize(1);
-  //if(curr_menu > 0)
-  //{
-    display.setCursor(115,50);
-      //if (5==curr_menu_item) 
-      //{
-        display.setTextColor(BLACK,WHITE); // 'inverted' text
-      //}
-      //else display.setTextColor(WHITE);
-    display.println("<<");  
-  //}
-  
+  display.setCursor(115,50);
+  display.setTextColor(BLACK,WHITE); // 'inverted' text
+  display.println("<<");  
   display.display();
 }
 
@@ -1186,17 +1113,9 @@ void custom_set_servo_delay()
   display.println(custom_servo_delay);
 
   display.setTextSize(1);
-  //if(curr_menu > 0)
-  //{
-    display.setCursor(115,50);
-      //if (5==curr_menu_item) 
-      //{
-        display.setTextColor(BLACK,WHITE); // 'inverted' text
-      //}
-      //else display.setTextColor(WHITE);
-    display.println("<<");  
-  //}
-  
+  display.setCursor(115,50);
+  display.setTextColor(BLACK,WHITE); // 'inverted' text
+  display.println("<<");  
   display.display();
 }
 
@@ -1218,17 +1137,9 @@ void fishing_mode(byte fishing_mode, byte start_pos, byte end_pos, byte move_spe
   display.println(fishing_mode);
 
   display.setTextSize(1);
-  //if(curr_menu > 0)
-  //{
     display.setCursor(115,50);
-      //if (5==curr_menu_item) 
-      //{
-        display.setTextColor(BLACK,WHITE); // 'inverted' text
-      //}
-      //else display.setTextColor(WHITE);
+    display.setTextColor(BLACK,WHITE); // 'inverted' text
     display.println("<<");  
-  //}
-  
   display.display();   
 
   
@@ -1317,16 +1228,9 @@ void fishing_mixed_mode(byte fishing_mode, volatile byte movement[28], byte move
   display.println(fishing_mode);
 
   display.setTextSize(1);
-  //if(curr_menu > 0)
-  //{
     display.setCursor(115,50);
-      //if (5==curr_menu_item) 
-      //{
-        display.setTextColor(BLACK,WHITE); // 'inverted' text
-      //}
-      //else display.setTextColor(WHITE);
+    display.setTextColor(BLACK,WHITE); // 'inverted' text
     display.println("<<");  
-  //}
   
   display.display();   
 
@@ -1334,34 +1238,6 @@ void fishing_mixed_mode(byte fishing_mode, volatile byte movement[28], byte move
   timer1_time = micros();
   if((timer1_time-timer1_last_time) >= delay_after)
   {
-  
-          /*if(end_pos>servo_max_pos)
-          {
-            end_pos = servo_max_pos;
-          }
-          else if(start_pos<servo_min_pos)
-          {
-            start_pos = servo_min_pos;
-          }*/
-        
-          if(prev_pos > pos)
-          {
-            pos = pos - move_speed;
-          }
-          else
-          {
-            pos = pos + move_speed;
-          }
-        
-          
-          /*if(pos > end_pos)
-          {
-            pos = end_pos;
-          }
-          else if(pos<start_pos)
-          {
-            pos = start_pos;
-          }*/
           if(servo_attached==false)
           {
             myservo.attach(9);
@@ -1369,14 +1245,9 @@ void fishing_mixed_mode(byte fishing_mode, volatile byte movement[28], byte move
           }
           
           for (byte i = 0; pos < 28; i++) { // goes from 0 degrees to 180 degrees
-            // in steps of 1 degree
-            //if(pos>end_pos)
-            //{
-            //  pos = end_pos;
-            //}
+            
             pos = 1500 + movement[i] + (move_speed*10);
-            myservo.write(pos);              // tell servo to go to position in variable 'pos'
-            //delay(15);                       // waits 15ms for the servo to reach the position
+            myservo.writeMicroseconds(pos);
           }
 
           
@@ -1411,16 +1282,10 @@ void custom_mode_start()
   display.println(encoder_value); 
 
   display.setTextSize(1);
-  //if(curr_menu > 0)
-  //{
+
     display.setCursor(115,50);
-      //if (5==curr_menu_item) 
-      //{
         display.setTextColor(BLACK,WHITE); // 'inverted' text
-      //}
-      //else display.setTextColor(WHITE);
     display.println("<<");  
-  //}
   
   display.display();   
 
@@ -1428,16 +1293,6 @@ void custom_mode_start()
   timer1_time = micros();
   if((timer1_time-timer1_last_time) >= (custom_servo_delay * 1000))
   {
-  
-          /*if(end_pos>servo_max_pos)
-          {
-            end_pos = servo_max_pos;
-          }
-          else if(start_pos<servo_min_pos)
-          {
-            start_pos = servo_min_pos;
-          }*/
-        
           if(prev_pos > pos)
           {
             pos = pos - custom_servo_speed;
@@ -1446,24 +1301,13 @@ void custom_mode_start()
           {
             pos = pos + custom_servo_speed;
           }
-        
-          
-          /*if(pos > end_pos)
-          {
-            pos = end_pos;
-          }
-          else if(pos<start_pos)
-          {
-            pos = start_pos;
-          }*/
+
           if(servo_attached==false)
           {
             myservo.attach(9);
             servo_attached = true;
           }
 
-          //custom_servo_speed = custom_servo_speed+encoder_value;
-          
           for (pos = custom_servo_start_pos; pos <= custom_servo_end_pos; pos += custom_servo_speed) { // goes from 0 degrees to 180 degrees
             // in steps of 1 degree
             if(pos>custom_servo_end_pos)
