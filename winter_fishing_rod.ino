@@ -18,7 +18,7 @@ Adafruit_SSD1306 display(OLED_RESET);
 Servo myservo;  // create servo object to control a servo
 
 byte prev_pos = 10;
-byte pos = 10;    // variable to store the servo position
+int pos = 10;    // variable to store the servo position
 
 byte servo_min_pos = 4; //min possible value for servo
 byte servo_max_pos = 170; //max possible value for servo
@@ -33,13 +33,18 @@ byte custom_servo_end_pos = servo_start_pos+5;
 byte custom_servo_speed = servo_speed;
 unsigned long custom_servo_delay = 100;
 
-volatile byte duty [28] = { //Default path array (saw shape)
+/*volatile byte duty [28] = { //Default path array (saw shape)
  140, 160, 180, 200, 220, 240, 260,
  280, 260, 240, 220, 200, 180, 160,
  140, 120, 100, 80, 60, 40, 20,
  0, 20, 40, 60, 80, 100, 120
+};*/
+volatile int duty [28] = {
+ 1, 0, 2, 1, 3, 2, 4,
+ 3, 5, 4, 6, 5, 7, 6,
+ 8, 7, 9, 8, 10, 9, 11,
+ 10, 12, 11, 13, 12, 14, 13
 };
-
 // texts for menus
 const char  main_menu0[] PROGMEM = "Fishing Modes 1";
 const char  main_menu1[] PROGMEM = "Fishing Modes 2";
@@ -301,23 +306,23 @@ void loop() {
             if(curr_menu_item==0)//1
             {
                 
-                fishing_mixed_mode(curr_menu_item+1, duty[28], 0, 1);
+                fishing_mixed_mode(curr_menu_item+1, duty[28], 1, 50);
             }
             else if(curr_menu_item==1)//2
             {
-                fishing_mixed_mode(curr_menu_item+1, duty[28], 1, 1);
+                fishing_mixed_mode(curr_menu_item+1, duty[28], 2, 50);
             }
             else if(curr_menu_item==2)//3
             {
-                fishing_mixed_mode(curr_menu_item+1, duty[28], 2, 1);
+                fishing_mixed_mode(curr_menu_item+1, duty[28], 3, 50);
             }
             else if(curr_menu_item==3)//4
             {
-                fishing_mixed_mode(curr_menu_item+1, duty[28], 3, 1);
+                fishing_mixed_mode(curr_menu_item+1, duty[28], 4, 50);
             }
             else if(curr_menu_item==4)//5
             {
-                fishing_mixed_mode(curr_menu_item+1, duty[28], 4, 1);
+                fishing_mixed_mode(curr_menu_item+1, duty[28], 5, 50);
             }
         }
 
@@ -1211,7 +1216,7 @@ void fishing_mode(byte fishing_mode, byte start_pos, byte end_pos, byte move_spe
 
 
 
-void fishing_mixed_mode(byte fishing_mode, volatile byte movement[28], byte move_speed, unsigned long delay_after)
+void fishing_mixed_mode(byte fishing_mode, volatile int movement[28], byte move_speed, unsigned long delay_after)
 {
   display.clearDisplay();
   // text display tests
@@ -1236,30 +1241,45 @@ void fishing_mixed_mode(byte fishing_mode, volatile byte movement[28], byte move
 
   
   timer1_time = micros();
-  if((timer1_time-timer1_last_time) >= delay_after)
-  {
+  //if((timer1_time-timer1_last_time) >= delay_after)
+  //{
           if(servo_attached==false)
           {
             myservo.attach(9);
             servo_attached = true;
           }
           
-          for (byte i = 0; pos < 28; i++) { // goes from 0 degrees to 180 degrees
+          for (int i = 0; i < 27; i++) { // goes from 0 degrees to 180 degrees
             
-            pos = 1500 + movement[i] + (move_speed*10);
-            myservo.writeMicroseconds(pos);
+            pos = servo_start_pos + (duty[i] * move_speed);
+            myservo.write(pos);
+            delay(15);
+            delay(delay_after);
+            //delayMicroseconds(delay_after);
           }
-
+          for (int i = 26; i > 0; i--) { // goes from 0 degrees to 180 degrees
+            
+            pos = servo_start_pos + (duty[i] * move_speed);
+            myservo.write(pos);
+            delay(15);
+            delay(delay_after);
+            //delayMicroseconds(delay_after);
+          }
+          /*for (byte i = 0; i < 28; i++) { // goes from 0 degrees to 180 degrees
+            
+            pos = 1000 + movement[i] + (move_speed*10);
+            myservo.writeMicroseconds(pos);
+          }*/
           
-          if(delay_after>300000) //detach only for long delay
-          {
+          //if(delay_after>300000) //detach only for long delay
+          //{
             myservo.detach();
             servo_attached = false;
-          }
+          //}
           prev_pos = pos;
   
     timer1_last_time = micros();
-  }
+  //}
   
 
 }
